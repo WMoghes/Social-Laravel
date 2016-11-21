@@ -36,3 +36,7 @@ Route::get('sign-in', [
 Route::post('sign-in', [
     'uses'      => 'AuthController@postSignin'
 ]);
+Route::get('sign-out', [
+    'uses'      => 'AuthController@getSignout',
+    'as'        => 'auth.signout'
+]);
