@@ -40,8 +40,8 @@
         @else
             <!------------------------  Sign in and sign out buttons ------------------------------>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ route('auth.signup') }}">Sign Up</a></li>
                 <li><a href="#">Sign In</a></li>
-                <li><a href="#">Sign Out</a></li>
             </ul>
         @endif
     </div><!-- /.container-fluid -->
