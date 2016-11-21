@@ -29,3 +29,10 @@ Route::get('sign-up', [
 Route::post('sign-up', [
     'uses'      => 'AuthController@postSignup'
 ]);
+Route::get('sign-in', [
+    'uses'      => 'AuthController@getSignin',
+    'as'        => 'auth.signin'
+]);
+Route::post('sign-in', [
+    'uses'      => 'AuthController@postSignin'
+]);

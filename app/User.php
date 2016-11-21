@@ -24,5 +24,26 @@ class User extends Authenticatable
     public function setUsernameAttribute($value){
         $this->attributes['username'] = ucfirst($value);
     }
+    public function setEmailAttribute($value){
+        $this->attributes['email'] = strtolower($value);
+    }
+
+    public function getName(){
+        if($this->firstname & $this->lastname){
+            return "{$this->firstname} {$this->lastname}";
+        }
+        if($this->firstname){
+            return $this->firstname;
+        }
+        return null;
+    }
+
+    public function getNameOrUsername(){
+        return $this->getName() ?: $this->username;
+    }
+
+    public function getFirstNameOrUsername(){
+        return $this->firstname ?: $this->username;
+    }
 
 }

@@ -26,13 +26,13 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Profile</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->getNameOrUsername() }}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">Sign Out</a></li>
                     </ul>
                 </li>
             </ul>
@@ -41,7 +41,7 @@
             <!------------------------  Sign in and sign out buttons ------------------------------>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ route('auth.signup') }}">Sign Up</a></li>
-                <li><a href="#">Sign In</a></li>
+                <li><a href="{{ route('auth.signin') }}">Sign In</a></li>
             </ul>
         @endif
     </div><!-- /.container-fluid -->
