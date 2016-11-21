@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function getSignup(){
-        return view('signup');
+        return view('auth.signup');
     }
 
     public function postSignup(Request $request){
@@ -27,7 +27,7 @@ class AuthController extends Controller
     }
 
     public function getSignin() {
-        return view('signin');
+        return view('auth.signin');
     }
 
     public function postSignin(Request $request){

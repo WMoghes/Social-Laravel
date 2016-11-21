@@ -12,8 +12,8 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'firstname',
-        'lastname',
+        'first_name',
+        'last_name',
         'location'
     ];
 
@@ -29,11 +29,11 @@ class User extends Authenticatable
     }
 
     public function getName(){
-        if($this->firstname & $this->lastname){
-            return "{$this->firstname} {$this->lastname}";
+        if($this->first_name & $this->last_name){
+            return "{$this->first_name} {$this->last_name}";
         }
         if($this->firstname){
-            return $this->firstname;
+            return $this->first_name;
         }
         return null;
     }
@@ -43,7 +43,11 @@ class User extends Authenticatable
     }
 
     public function getFirstNameOrUsername(){
-        return $this->firstname ?: $this->username;
+        return $this->first_name ?: $this->username;
+    }
+
+    public function getAvatar(){
+        return "https://www.gravatar.com/avatar/{{ md5($this->email) }}?d=mm&s=60";
     }
 
 }

@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Social</a>
+            <a class="navbar-brand" href="{{ route('home') }}">Social</a>
         </div>
         @if(Auth::user())
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,11 +17,12 @@
                 <li class="active"><a href="#">Timeline <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Friends</a></li>
             </ul>
-            <form class="navbar-form navbar-left">
+            <form class="navbar-form navbar-left" role="search" method="post" action="{{ route('search.results') }}">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Enter the name">
+                    <input type="text" name="query" class="form-control" placeholder="Finding people">
                 </div>
                 <button type="submit" class="btn btn-default">Search</button>
+                {{ csrf_field() }}
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Profile</a></li>

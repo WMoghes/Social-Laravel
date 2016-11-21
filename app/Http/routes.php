@@ -44,4 +44,11 @@ Route::group(['middleware' => 'auth'], function(){
         'uses'      => 'AuthController@getSignout',
         'as'        => 'auth.signout'
     ]);
+//    Route::get('search', [
+//        'uses'      => 'SearchController@searchResults'
+//    ]);
+    Route::post('search', [
+        'uses'      => 'SearchController@searchResults',
+        'as'        => 'search.results'
+    ]);
 });
