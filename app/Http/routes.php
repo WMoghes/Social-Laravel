@@ -44,11 +44,23 @@ Route::group(['middleware' => 'auth'], function(){
         'uses'      => 'AuthController@getSignout',
         'as'        => 'auth.signout'
     ]);
-//    Route::get('search', [
-//        'uses'      => 'SearchController@searchResults'
-//    ]);
     Route::post('search', [
         'uses'      => 'SearchController@searchResults',
         'as'        => 'search.results'
+    ]);
+    /***
+     * User Profile
+     */
+    Route::get('profile/{username}', [
+        'uses'      => 'ProfileController@getProfile',
+        'as'        => 'profile'
+    ]);
+    Route::get('profile/edit/{username}', [
+        'uses'      => 'ProfileController@getEdit',
+        'as'        => 'profile.edit'
+    ]);
+    Route::post('profile/edit', [
+        'uses'      => 'ProfileController@postEdit',
+        'as'        => 'profile.update'
     ]);
 });
