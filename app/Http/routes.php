@@ -63,4 +63,8 @@ Route::group(['middleware' => 'auth'], function(){
         'uses'      => 'ProfileController@postEdit',
         'as'        => 'profile.update'
     ]);
+    Route::get('friends', [
+        'uses'      => 'FriendController@getIndex',
+        'as'        => 'friends.index'
+    ]);
 });
