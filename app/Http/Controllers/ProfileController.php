@@ -36,4 +36,5 @@ class ProfileController extends Controller
 
         return redirect()->route('profile.edit', Auth::user()->username)->withInfo('You profile has been updated.');
     }
+
 }

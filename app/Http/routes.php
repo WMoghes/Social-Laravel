@@ -63,8 +63,19 @@ Route::group(['middleware' => 'auth'], function(){
         'uses'      => 'ProfileController@postEdit',
         'as'        => 'profile.update'
     ]);
+    /**
+     * Friends
+     */
     Route::get('friends', [
         'uses'      => 'FriendController@getIndex',
         'as'        => 'friends.index'
+    ]);
+    Route::get('friends/add/{username}', [
+        'uses'      => 'FriendController@getAdd',
+        'as'        => 'friends.add'
+    ]);
+    Route::get('friends/accept/{username}', [
+        'uses'      => 'FriendController@getAccept',
+        'as'        => 'friends.accept'
     ]);
 });

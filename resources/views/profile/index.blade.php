@@ -14,15 +14,15 @@
 
             @elseif (Auth::user()->hasFriendRequestReceived($user))
 
-                <a href="#" class="btn btn-primary">Accept Friend Request</a>
+                <a href="{{ route('friends.accept', $user->username) }}" class="btn btn-primary">Accept Friend Request</a>
 
             @elseif (Auth::user()->isFriendsWith($user))
 
                 <p>You and {{ $user->getNameOrUsername() }} are friends</p>
 
-            @else
+            @elseif (Auth::user()->id !== $user->id)
 
-                <a href="#" class="btn btn-primary">Add as friend</a>
+                <a href="{{ route('friends.add', $user->username) }}" class="btn btn-primary">Add as friend</a>
 
             @endif
 
